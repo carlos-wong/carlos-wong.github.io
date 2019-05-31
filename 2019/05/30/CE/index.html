@@ -2,195 +2,90 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  
-
-  
-  <title>介绍 Gitlabe CE | 极客随想</title>
+  <title>介绍 Gitlabe CE | 黄怀贤</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Gitlab 是什么? https://about.gitlab.com/ 普遍的看法是一个开源版本的 github,在使用角度上来看我认为没问题。但是从产品的开发流程上，团队的协作上，透明程度不是 github 可以比拟的。  Gitlab CE 适合在生产环境使用吗？我都用 gitlab CE 来做什么?使用的期间遇到了什么问题？我对 Gitlab CE 都做了什么修改？">
-<meta property="og:type" content="article">
-<meta property="og:title" content="介绍 Gitlabe CE">
-<meta property="og:url" content="http://carlos-wong.github.io/2019/05/30/CE/index.html">
-<meta property="og:site_name" content="极客随想">
-<meta property="og:description" content="Gitlab 是什么? https://about.gitlab.com/ 普遍的看法是一个开源版本的 github,在使用角度上来看我认为没问题。但是从产品的开发流程上，团队的协作上，透明程度不是 github 可以比拟的。  Gitlab CE 适合在生产环境使用吗？我都用 gitlab CE 来做什么?使用的期间遇到了什么问题？我对 Gitlab CE 都做了什么修改？">
-<meta property="og:locale" content="Zh">
-<meta property="og:updated_time" content="2019-05-30T07:56:40.453Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="介绍 Gitlabe CE">
-<meta name="twitter:description" content="Gitlab 是什么? https://about.gitlab.com/ 普遍的看法是一个开源版本的 github,在使用角度上来看我认为没问题。但是从产品的开发流程上，团队的协作上，透明程度不是 github 可以比拟的。  Gitlab CE 适合在生产环境使用吗？我都用 gitlab CE 来做什么?使用的期间遇到了什么问题？我对 Gitlab CE 都做了什么修改？">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
   
-    <link rel="alternate" href="/atom.xml" title="极客随想" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">极客随想</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://carlos-wong.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="landscape-CE" class="article article-type-landscape" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/30/CE/" class="article-date">
-  <time datetime="2019-05-30T01:02:44.000Z" itemprop="datePublished">2019-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <nav class="app-nav">
   
-    <h1 class="article-title" itemprop="name">
-      介绍 Gitlabe CE
-    </h1>
+    
+      <a href="/.">home</a>
+    
   
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Gitlab-是什么"><a href="#Gitlab-是什么" class="headerlink" title="Gitlab 是什么?"></a>Gitlab 是什么?</h2><ul>
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2019/05/30/CE/">介绍 Gitlabe CE</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">May 30 2019</p>
+  </section>
+
+  <section class="article-entry">
+    <h2 id="Gitlab-是什么"><a href="#Gitlab-是什么" class="headerlink" title="Gitlab 是什么?"></a>Gitlab 是什么?</h2><ul>
 <li><a href="https://about.gitlab.com/" target="_blank" rel="noopener">https://about.gitlab.com/</a> 普遍的看法是一个开源版本的 github,在使用角度上来看我认为没问题。但是从产品的开发流程上，团队的协作上，透明程度不是 github 可以比拟的。</li>
 </ul>
 <h2 id="Gitlab-CE-适合在生产环境使用吗？"><a href="#Gitlab-CE-适合在生产环境使用吗？" class="headerlink" title="Gitlab CE 适合在生产环境使用吗？"></a>Gitlab CE 适合在生产环境使用吗？</h2><h2 id="我都用-gitlab-CE-来做什么"><a href="#我都用-gitlab-CE-来做什么" class="headerlink" title="我都用 gitlab CE 来做什么?"></a>我都用 gitlab CE 来做什么?</h2><h2 id="使用的期间遇到了什么问题？"><a href="#使用的期间遇到了什么问题？" class="headerlink" title="使用的期间遇到了什么问题？"></a>使用的期间遇到了什么问题？</h2><h2 id="我对-Gitlab-CE-都做了什么修改？"><a href="#我对-Gitlab-CE-都做了什么修改？" class="headerlink" title="我对 Gitlab CE 都做了什么修改？"></a>我对 Gitlab CE 都做了什么修改？</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://carlos-wong.github.io/2019/05/30/CE/" data-id="cjwad6wrf0001smx9ue9scwms" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/05/30/gitlab commit log 规范化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          git cz , fuzzy 让你飞起来
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
+  </section>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/1055130?s=460&v=4" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> 黄怀贤 </p>
+      <p class="subtitle"> 工程师 </p>
+    <div>
+  </div></div></section>
+
+  <section class="share-btns">
+      <!-- <p> share it if you like it~ </p> -->
+      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text= id=" gitlab-是什么"><a ">
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+</a> -->
+  </section>
+</div>
+
+
   
-    
+</main>
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/05/30/gitlab commit log 规范化/">git cz , fuzzy 让你飞起来</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/30/CE/">介绍 Gitlabe CE</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 Carlos &lt;huaixian.huang@gmail.com&gt;<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
 </body>
 </html>
