@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>ReactNative 简介 转载自- https://github.com/nofeetbirds | 黄怀贤</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+</html>
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2019/08/06/reactnative-get-start/">ReactNative 简介 转载自- https://github.com/nofeetbirds</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">August 06 2019</p>
+  </section>
+
+  <section class="article-entry">
+    <p>转载自： <a href="https://github.com/nofeetbirds" target="_blank" rel="noopener">刘宗水的github</a></p>
+<h2>React Native简介</h2>
+<p>React Native是Facebook于2015年4月出品的一个革新性的跨平台移动应用开发框架，跨平台不是它最大的亮点，它背后的[React]才应该是它的神奇所在，也是它革新所在。
+React Native使你能够在Javascript和React的基础上获得完全一致的开发体验
+官方文档：https://facebook.github.io/react-native/docs/getting-started.html
+https://github.com/facebook/react-native
+React： https://reactjs.org</p>
+<h2>React Native通信机制</h2>
+<p>执行 JavaScript 源码,方法调用流程。(ps: Objective-c)</p>
+<p><img src="http://carlosupload.lejuhub.com/img/20190806111532.png" alt></p>
+<h2>React Native 实例</h2>
+<p>jsx 。JS 语言中嵌入了 HTML 和 CSS 的元素。这种被扩展的Javascript 语言称 jsx （语法）
+JavaScript 内存中维护了一个 Virtual DOM , 与真实显示的DOM保持一一对应的关系。当界面发生变化时，得益于高效的 DOM Diff 算法，避免重新绘制 DOM。
+组件。组件可以用好几种方式声明，可以是一个包含 render() 方法的类，也可以是一个简单的函数. 通过属性(props) 和 状态(state)传递数据。（控制器）</p>
+<p>3.1 状态(state)。更新组件的 state，然后根据新的 state 重新渲染用户界面（不用操作DOM）。（属性，全局变量）</p>
+<p>3.2 属性(props)。Props 是不可变的，子组件只能通过 props 来传递数据。（正向传值）</p>
+<p>3.3 元素。普通的对象，构成的应用的最小单元。元素的事件处理和 DOM 元素类似</p>
+<p>3.4 生命周期。</p>
+<ul>
+<li>componentWillMount 渲染前调用,在客户端也在服务端</li>
+<li>componentDidMount 第一次渲染后调用，只在客户端</li>
+<li>componentWillReceiveProps 在组件接收到一个新的 prop (更新后)时被调用</li>
+<li>shouldComponentUpdate 返回一个布尔值。在组件接收到新的props或者state时被调用。</li>
+<li>componentWillUpdate 在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。</li>
+<li>componentDidUpdate 在组件完成更新后立即调用。在初始化时不会被调用。</li>
+<li>componentWillUnmount在组件从 DOM 中移除之前立刻被调用。</li>
+</ul>
+<h2>React Native 安装依赖</h2>
+<ul>
+<li>node （version &gt; 10）</li>
+<li>brew install node</li>
+<li>Watchman （快速捕捉文件的变化从而实现实时刷新）</li>
+<li>brew install watchman</li>
+<li>react-natvie-cli （命令行工具用于执行创建、初始化、更新项目、运行打包服务（packager）等任务</li>
+<li>npm install -g yarn react-native-cli</li>
+</ul>
+<h2>React Native 创建新项目</h2>
+<ul>
+<li>
+<p>react-native init 项目名称</p>
+</li>
+<li>
+<p>文件夹目录结构：</p>
+</li>
+</ul>
+<p><img src="http://carlosupload.lejuhub.com/img/20190806111907.png" alt></p>
+<h2>React Native 真机调试</h2>
+<p>确保开发设备和手机在同一个局域网，确保编译脚本正确检测到 IP 地址，摇晃手机，调出调试菜单。</p>
+<p>3.1  Reload --- 刷新页面</p>
+<p>3.2  Deug JS Remotely --- 启动 Chrome 调试应用</p>
+<p>3.3  Enable Live Reload --- 自动刷新，可以看到明显刷新效果</p>
+<p>3.4  Enable Hot Reload --- 热加载，基本看不出效果，类似局部刷新</p>
+<p>3.5  Show inspector --- 快速定位获取当前选中元素信息</p>
+<p>3.6  Show Perf Monitor --- 监控窗口。实时监控性能状态。</p>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/1055130?s=460&v=4" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> 黄怀贤 </p>
+      <p class="subtitle"> 工程师 </p>
+    <div>
+  </div></div></section>
+
+  <section class="share-btns">
+      <!-- <p> share it if you like it~ </p> -->
+      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=转载自： <a href=" https:">
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+ -->
+  </section>
+</div>
+
+
+  
+</main>
+
+</body>
+</html>
