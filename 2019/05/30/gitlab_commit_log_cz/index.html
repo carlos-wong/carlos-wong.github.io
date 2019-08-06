@@ -38,78 +38,56 @@
   </section>
 
   <section class="article-entry">
-    <h2>git 是什么？</h2>
-<ul>
-<li>
-<p>https://git-scm.com/docs</p>
+    <h2 id="git-是什么？"><a href="#git-是什么？" class="headerlink" title="git 是什么？"></a>git 是什么？</h2><ul>
+<li><p><a href="https://git-scm.com/docs" target="_blank" rel="noopener">https://git-scm.com/docs</a> </p>
 </li>
-<li>
-<p>如果你是一个程序员，那么你每天接触最多的应该是源代码。如何合理的管理好源代码，这个是作为程序员的立身之本。而 git 就是作为一个优秀的源代码管理工具而设计的，在世界上最大，最复杂，最活跃的 linux kernel 项目中被使用。同时这个工具也是作为辅助 linux kernel 开发而设计的。</p>
+<li><p>如果你是一个程序员，那么你每天接触最多的应该是源代码。如何合理的管理好源代码，这个是作为程序员的立身之本。而 git 就是作为一个优秀的源代码管理工具而设计的，在世界上最大，最复杂，最活跃的 linux kernel 项目中被使用。同时这个工具也是作为辅助 linux kernel 开发而设计的。</p>
 </li>
-<li>
-<p>git 能帮你解决你最关心的问题: 我刚才都修改了什么？它把每一次的修改作为一个 commit 记录下来。</p>
+<li><p>git 能帮你解决你最关心的问题: 我刚才都修改了什么？它把每一次的修改作为一个 commit 记录下来。</p>
 </li>
-<li>
-<p>说实话，如果没有 git 我现在都不能稳稳当当的做好一个项目。</p>
+<li><p>说实话，如果没有 git 我现在都不能稳稳当当的做好一个项目。</p>
 </li>
 </ul>
-<h2>git 都改变了什么?</h2>
-<ul>
-<li>
-<p>团队开发的协作方式，</p>
+<h2 id="git-都改变了什么"><a href="#git-都改变了什么" class="headerlink" title="git 都改变了什么?"></a>git 都改变了什么?</h2><ul>
+<li><p>团队开发的协作方式，</p>
 <ol>
 <li>谁修改了代码引入了错误</li>
 <li>让多个人同时开发，然后组合所有人的开发成果作为最终的产品。</li>
 </ol>
 </li>
-<li>
-<p>更放心的尝试各种实现的方法和增加测试代码。如果你把你的所有记录都作为分支保留下来的话。</p>
+<li><p>更放心的尝试各种实现的方法和增加测试代码。如果你把你的所有记录都作为分支保留下来的话。</p>
 </li>
 </ul>
-<h2>给大家使用 git 的建议</h2>
-<ul>
-<li>
-<p>要按照工作的步骤提交代码，这样回顾的时候会更清晰。同时要及时提交代码，积累太久之后你基本无法按照模块提交你编写的代码。</p>
+<h2 id="给大家使用-git-的建议"><a href="#给大家使用-git-的建议" class="headerlink" title="给大家使用 git 的建议"></a>给大家使用 git 的建议</h2><ul>
+<li><p>要按照工作的步骤提交代码，这样回顾的时候会更清晰。同时要及时提交代码，积累太久之后你基本无法按照模块提交你编写的代码。</p>
 </li>
-<li>
-<p>解决冲突的时候一定要和产生冲突的人讨论，而不是自行决定如何解决冲突。解决冲突是一个看起来简单，但是实际会产生比较大的破坏性影响，同时对合并者要求比较高的技能。有些团队是让开发在提交 PR 的时候自行解决冲突，我认为这么做是不可取的。我们团队中，只有项目负责人才有权限合并代码。</p>
+<li><p>解决冲突的时候一定要和产生冲突的人讨论，而不是自行决定如何解决冲突。解决冲突是一个看起来简单，但是实际会产生比较大的破坏性影响，同时对合并者要求比较高的技能。有些团队是让开发在提交 PR 的时候自行解决冲突，我认为这么做是不可取的。我们团队中，只有项目负责人才有权限合并代码。</p>
 </li>
-<li>
-<p>一个清晰易懂，准确的 commit message。 如果你这么做了，那么即将有以下两个好处:</p>
+<li><p>一个清晰易懂，准确的 commit message。 如果你这么做了，那么即将有以下两个好处:</p>
 <ol>
-<li>
-<p>更清晰的历史记录,如下图所示，每一次提交都有一个关键词描述对应的操作，关键词后面带上了具体的操作</p>
-<p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20190530160948.png" alt></p>
+<li><p>更清晰的历史记录,如下图所示，每一次提交都有一个关键词描述对应的操作，关键词后面带上了具体的操作</p>
+<p> <img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20190530160948.png" alt></p>
 </li>
-<li>
-<p>更优美的代码，如果我们用得好，那么注释不应该存在。如下图所示，我使用 emacs(magit-blame) 来阅读 https://github.com/commitizen/cz-cli 项目的代码，可以快速的知道每一部分代码对应修改的原因。这样是不是比注释更加清晰？</p>
+<li><p>更优美的代码，如果我们用得好，那么注释不应该存在。如下图所示，我使用 emacs(magit-blame) 来阅读 <a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener">https://github.com/commitizen/cz-cli</a> 项目的代码，可以快速的知道每一部分代码对应修改的原因。这样是不是比注释更加清晰？</p>
+<p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20190530161809.png" alt></p>
+<p>同时还有两个好处: </p>
+<p> 2.1 可以隐藏注释，在阅读之后我们开始修改之前可以隐藏掉 commit message </p>
+<p> 2.2 不用维护重复性的东西，我们选择了 git 必然会有 commit message 而如果注释和 commit message 重复了，肯定要去掉一个不必要的内容。维护注释大家最常遇到的问题是在匆忙修改代码的时候忘了修改注释，这样不仅注释不能准确的解释代码，还可能会误导阅读代码的人。</p>
 </li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20190530161809.png" alt></p>
-<p>同时还有两个好处:</p>
-<pre><code>  2.1 可以隐藏注释，在阅读之后我们开始修改之前可以隐藏掉 commit message 
-  
-  2.2 不用维护重复性的东西，我们选择了 git 必然会有 commit message 而如果注释和 commit message 重复了，肯定要去掉一个不必要的内容。维护注释大家最常遇到的问题是在匆忙修改代码的时候忘了修改注释，这样不仅注释不能准确的解释代码，还可能会误导阅读代码的人。
-</code></pre>
 </li>
 </ul>
-<h2>有没有什么好的辅助工具帮助我们写出更好的 commit message?</h2>
-<ul>
-<li>
-<p>http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html 这篇文章，清晰易懂。好的 commit message 还可以帮你输出好的 Changelog。</p>
+<h2 id="有没有什么好的辅助工具帮助我们写出更好的-commit-message"><a href="#有没有什么好的辅助工具帮助我们写出更好的-commit-message" class="headerlink" title="有没有什么好的辅助工具帮助我们写出更好的 commit message?"></a>有没有什么好的辅助工具帮助我们写出更好的 commit message?</h2><ul>
+<li><p><a href="http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html</a> 这篇文章，清晰易懂。好的 commit message 还可以帮你输出好的 Changelog。</p>
 </li>
-<li>
-<p>https://github.com/commitizen/cz-conventional-changelog 这个工具已经非常完善，并且可以自己选择不同的模板。</p>
+<li><p><a href="https://github.com/commitizen/cz-conventional-changelog" target="_blank" rel="noopener">https://github.com/commitizen/cz-conventional-changelog</a> 这个工具已经非常完善，并且可以自己选择不同的模板。</p>
 </li>
 </ul>
-<h3>我进行了什么尝试?</h3>
-<p>其实这个功能已经足够好用，但是作为一个 emacser, 习惯了使用 helm 来快速匹配选中的项。在输入 <code>git cz</code> 之后还需要手动去输入数字的编号来选择对应的 action 还是稍稍有点不舒服的。</p>
+<h3 id="我进行了什么尝试"><a href="#我进行了什么尝试" class="headerlink" title="我进行了什么尝试?"></a>我进行了什么尝试?</h3><p>其实这个功能已经足够好用，但是作为一个 emacser, 习惯了使用 helm 来快速匹配选中的项。在输入 <code>git cz</code> 之后还需要手动去输入数字的编号来选择对应的 action 还是稍稍有点不舒服的。</p>
 <ul>
-<li>
-<p>https://github.com/carlos-wong/conventional-changelog-fuzzy 我基于原有的插件修改了一个模板</p>
+<li><p><a href="https://github.com/carlos-wong/conventional-changelog-fuzzy" target="_blank" rel="noopener">https://github.com/carlos-wong/conventional-changelog-fuzzy</a> 我基于原有的插件修改了一个模板</p>
 </li>
-<li>
-<p>安装方法:</p>
+<li><p>安装方法: </p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20190530164504.png" alt></p>
@@ -117,8 +95,7 @@
 <li>录屏</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/carlos-wong/conventional-changelog-fuzzy/master/images/git-cz-changelog-fz.gif" alt="git-cz-changelog-fz.gif"></p>
-<h2>总结</h2>
-<p>工具不是提高技艺的必备条件，但是一个好的工具能帮助你更快的提高技艺。让你习惯好的设计哲学，好的使用习惯。 例如: https://ruby-china.org/topics/2262 。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>工具不是提高技艺的必备条件，但是一个好的工具能帮助你更快的提高技艺。让你习惯好的设计哲学，好的使用习惯。 例如: <a href="https://ruby-china.org/topics/2262" target="_blank" rel="noopener">https://ruby-china.org/topics/2262</a> 。</p>
 <p>所以在使用新的工具的时候，我都会看一下是否在 emacs 里面使用的习惯能否迁移过来。如果不行，那么我可能会选择在 emacs 里面寻找替代品。毕竟 emacs 是一个伪装成编辑器的操作系统。</p>
 
   </section>
@@ -135,9 +112,7 @@
 
   <section class="share-btns">
       <!-- <p> share it if you like it~ </p> -->
-      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=>git 是什么？</h2>
-<ul>
-">
+      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text= id=" git-是什么？"><a hr">
   Tweet
 </a>
 
@@ -160,7 +135,7 @@
   return t;
 }(document, "script", "twitter-wjs"));
 </script>
- -->
+</a> -->
   </section>
 </div>
 
