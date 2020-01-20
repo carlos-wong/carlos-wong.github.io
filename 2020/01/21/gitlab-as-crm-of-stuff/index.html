@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>使用 Gitlab 作为办公物品管理工具。 | 黄怀贤</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+</html>
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2020/01/21/gitlab-as-crm-of-stuff/">使用 Gitlab 作为办公物品管理工具。</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">January 21 2020</p>
+  </section>
+
+  <section class="article-entry">
+    <h1 id="为何使用-gitlab"><a href="#为何使用-gitlab" class="headerlink" title="为何使用 gitlab"></a>为何使用 gitlab</h1><p>主要原因是目前部门内部的项目管理是基于 Gitlab 来进行的。</p>
+<p>Gitlab 是一个非常好的文本协作平台，以这个概念出发，Gitlab 不仅用来管理源代码，也用来管理文档，以及记录事务。</p>
+<p>同时基于消灭重复信息的原则出发，能在一个平台的就在一个平台。这样在搜索，跳转，交流的时候都会非常的高效。</p>
+<h1 id="如何使用-Gitlab-来进行物品管理"><a href="#如何使用-Gitlab-来进行物品管理" class="headerlink" title="如何使用 Gitlab 来进行物品管理"></a>如何使用 Gitlab 来进行物品管理</h1><p>首先物品管理中的物品指的是什么？目前来说我实践的是把所有实体的物品都记录下来。</p>
+<p>比如：测试的设备，开发用的电脑，部门统一购买的书籍。书籍也纳入管理之后变方便的是，如果你想要借某本书，你通过搜索书名就能快速的找到现在持有这本书的人。</p>
+<p>当然除了书籍，其他的物品也是可以被搜索。</p>
+<p>如下图，是一个搜索 ipad 的结果。从截图可以看出来，这个 ipad<br>是从两年前登记入库的。</p>
+<p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20200120234701.png" alt></p>
+<h2 id="一些基本概念介绍"><a href="#一些基本概念介绍" class="headerlink" title="一些基本概念介绍"></a>一些基本概念介绍</h2><h3 id="assigee"><a href="#assigee" class="headerlink" title="assigee"></a>assigee</h3><p>每个事物都应该有一个责任人，或者叫负责人。</p>
+<p>一件事情如果有多个负责人，最后就会流于形式, 大部分人都会觉得这件事情应该是别人做。如果只有一个负责人，只要给他足够的空间和资源，他就能尽心尽力。</p>
+<h3 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h3><p>基本上就是代表一件事，但是在物品管理的场景里面，我用它来代表一个物品。</p>
+<h3 id="Issue-title"><a href="#Issue-title" class="headerlink" title="Issue title"></a>Issue title</h3><p>一个 Issue 的标题。一般就像一篇文章的题目。</p>
+<p>如果标题写得好就像一篇文章写得好，会让跟进的人快速的了解基础背景信息。同时又能便于搜索。</p>
+<p>在物品管理的场景里面，我们使用它来代表物品的名称。所以如果你物品的名称起的足够详细，那么搜索的时候就越方便。</p>
+<h3 id="Maintaienr"><a href="#Maintaienr" class="headerlink" title="Maintaienr"></a>Maintaienr</h3><p>项目的负责人，该项目所有事物都是应该由 Maintainer 确认。</p>
+<h3 id="Close-Issue"><a href="#Close-Issue" class="headerlink" title="Close Issue"></a>Close Issue</h3><p>对一个 Issue 的操作，基本上代表的事物的完结。</p>
+<h3 id="Bot"><a href="#Bot" class="headerlink" title="Bot"></a>Bot</h3><p>我自己编写的自动化程序。它能代替人工，进行一些重复性的，复杂的工作。</p>
+<h2 id="在物品管理中的几个要素"><a href="#在物品管理中的几个要素" class="headerlink" title="在物品管理中的几个要素"></a>在物品管理中的几个要素</h2><h3 id="盘点"><a href="#盘点" class="headerlink" title="盘点"></a>盘点</h3><p>我们需要定期的盘点物品，防止损坏，或者因为某个人持有太多物品疏于管理。在物品已经损坏很久才去维修会有比较大的金钱以及时间成本,及早发现物品出现问题，修复的成本越低。</p>
+<h3 id="检索"><a href="#检索" class="headerlink" title="检索"></a>检索</h3><p>能快速的知道某个物品在谁手上。</p>
+<h3 id="历史记录"><a href="#历史记录" class="headerlink" title="历史记录"></a>历史记录</h3><p>比如一个手机，是从什么时候购入。</p>
+<p>都经过几个人的手。都维修了几次，维修过的问题是什么？</p>
+<h3 id="减少人力消耗"><a href="#减少人力消耗" class="headerlink" title="减少人力消耗"></a>减少人力消耗</h3><p>详细的历史记录可能需要填入很多必要的信息。比如时间，比如交接的人。以及需要将所有的信息整理到一起。</p>
+<p>而一个好的物品管理系统。只需要一次操作，就能自动记录时间以及交接的人。同时又能将所有的历史信息汇总到一起可以快速的查看。</p>
+<p>真正需要人工操作的是确认。即确认 A 已经从 B 手上接手对应的物品。其他的内容都由系统自动维护。</p>
+<p>这样一来就能用最少而且是最必要的操作来达到目的，但是又有详细的信息。</p>
+<h3 id="对外的交接以及销毁"><a href="#对外的交接以及销毁" class="headerlink" title="对外的交接以及销毁"></a>对外的交接以及销毁</h3><p>一些物品可能会出现部门间借用的情况，比如展会。</p>
+<p>另外物品也可能出现销毁的情况，比如 20 年前的诺基亚手机，它已经没有作为测试机的意义了。</p>
+<h2 id="针对几个要素的解决办法"><a href="#针对几个要素的解决办法" class="headerlink" title="针对几个要素的解决办法"></a>针对几个要素的解决办法</h2><h3 id="盘点-1"><a href="#盘点-1" class="headerlink" title="盘点"></a>盘点</h3><p>可以编写一个 Bot 定期抽查物品持有者对物品的保管情况。</p>
+<p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20200120235000.png" alt></p>
+<p>在 Gitlab 中我实现的机器人和一个普通用户没有区别，它会去评论，触发，并检查结果。上图就是一个基本的盘点流程，由机器人触发，物品持有人拍照回复。</p>
+<p>通过定制一些盘点机制，比如按天轮转查询每个物品，随机抽查物品。就可以比较稳妥的对物品进行比较好的保管。</p>
+<p>同时盘点就变成分布式的工作。因为盘点的时候需要参与的是物品持有者，而连续多次盘点到某个人的概率是比较低的。</p>
+<h3 id="检索-1"><a href="#检索-1" class="headerlink" title="检索"></a>检索</h3><p>检索用到的是 Gitlab 中 Issue 的概念。</p>
+<p>如下图</p>
+<p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20200120235132.png" alt></p>
+<p>每一个 Issue 都会代表一个物品。Issue 的 title 就是物品的名称。</p>
+<p>所以只要这样记录下来，你就可以使用搜索 Issue<br>的方法来搜索物品。而且这是一种技能迁移，使用的人不需要学习新的知识，就能掌握这个操作。</p>
+<p>如何知道当前物品在谁手上?</p>
+<p>如下图，我们可以从 Issue 的信息中查看到物品现在是在谁的手上。</p>
+<p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20200120235217.png" alt></p>
+<p>继续上面的方法，将 Issue 的 assignee<br>角色作为物品的管理者。所以只要搜索到 Issue<br>，就能知道这个物品的持有者是谁。</p>
+<h3 id="历史记录-1"><a href="#历史记录-1" class="headerlink" title="历史记录"></a>历史记录</h3><p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20200120235351.png" alt></p>
+<p>再次使用 Issue 的中已有的概念，我们可以在一个 Issue<br>中查看物品的流转情况，维修情况。如上图，我们可以看到物品在几个人手上流转过。</p>
+<h3 id="减少人力消耗-1"><a href="#减少人力消耗-1" class="headerlink" title="减少人力消耗"></a>减少人力消耗</h3><p>需要人参与的情况</p>
+<ol>
+<li>物品的交接</li>
+</ol>
+<p>由 A 发起并由 B 确认。那么部门的管理者就可以将 Issue 从 A assigee 到 B。</p>
+<p>这中间的工作量就是两个人的评论加上部门管理者的 assignee 操作。</p>
+<ol start="2">
+<li>物品部门间的流转</li>
+</ol>
+<p>由物品的持有者持有接收人的收条，并拍照上传到 Issue 中。并在归还物品的时候销毁，或者交还收条。</p>
+<p>这中间的参与者就是物品交接的两个人，写一个收条，拍照上传。<br>并且在很多情况下也不一定需要拍照上传，因为 Issue 仍然还是 assignee 给部门内部交接出去的人，由他全权负责。</p>
+<p>对外交接及销毁基本上和减少人力消耗是高度相关的，后面就不再介绍。</p>
+<h2 id="几种可能出现的坏情况的预防"><a href="#几种可能出现的坏情况的预防" class="headerlink" title="几种可能出现的坏情况的预防"></a>几种可能出现的坏情况的预防</h2><h3 id="篡改历史记录"><a href="#篡改历史记录" class="headerlink" title="篡改历史记录"></a>篡改历史记录</h3><p>秉持我的原则，所有的历史记录都不可修改和删除。</p>
+<p>所以使用我维护的版本 <a href="https://github.com/carlos-wong/gitlab-ce-carlos" target="_blank" rel="noopener">https://github.com/carlos-wong/gitlab-ce-carlos</a> 就能解决这个问题</p>
+<h3 id="物品持有者悄默默的把物品-assign-给其他人"><a href="#物品持有者悄默默的把物品-assign-给其他人" class="headerlink" title="物品持有者悄默默的把物品 assign 给其他人"></a>物品持有者悄默默的把物品 assign 给其他人</h3><p>因为在 Gitlab 中有一套通知机制。所以被 assignee<br>的人会收到邮件通知，如果他并没有接收物品，就可以立即提出异议。</p>
+<p>所以不存在悄默默转移物品给其他人的情况。</p>
+<p>另外，使用我维护的版本 <a href="https://github.com/carlos-wong/gitlab-ce-carlos" target="_blank" rel="noopener">https://github.com/carlos-wong/gitlab-ce-carlos</a> 设置部门的管理者为<br>Maintainer, 那么这样一来，只有经过 Maintainer 才能 assignee。</p>
+<h3 id="物品持有者悄默默地-Close-物品的记录。"><a href="#物品持有者悄默默地-Close-物品的记录。" class="headerlink" title="物品持有者悄默默地 Close 物品的记录。"></a>物品持有者悄默默地 Close 物品的记录。</h3><p>首先如果使用我维护的版本<br><a href="https://github.com/carlos-wong/gitlab-ce-carlos" target="_blank" rel="noopener">https://github.com/carlos-wong/gitlab-ce-carlos</a> 。 那么只有 Maintainer<br>才能 Close Issue，所以无法悄默默地 Close 物品的记录。</p>
+<p>另外，我做了一个复查 Bot。所有关闭的工单，都需要我回复一条指令才算完结，否则会一直提醒我确认。</p>
+<p><img src="https://raw.githubusercontent.com/carlos-wong/uploadfiles/master/img/20200120235530.png" alt></p>
+<p>如上图，只有我指定的账号回复 `pass` 才代表这个物品是被确认回收。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通过以上的方法，我实践了三年的时间。从无出现过物品丢失或者损坏不报的情况。</p>
+<p>当然，如果出现了以上的情况，也可以快速，清晰的去调查清楚。</p>
+<p>将软件的开发管理应用到生活，项目，部门管理中。表面上看违反直觉，事实上是一种高度有效的方法。</p>
+<p>这是一种革命性的做事方式，有别于口口相传，部落式的信息传递。</p>
+<p>基本上如果你对 Gitlab<br>理解足够，并且有二次开发的能力。就能非常方便的去使用它，不需要硬性的让团队的做事方式去适应它。而是它辅助你的团队更高效的做事，去掉不必要的环节，并保留非常详实的信息。</p>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/1055130?s=460&v=4" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> 黄怀贤 </p>
+      <p class="subtitle"> 乐聚机器人研发总监 </p>
+    <div>
+  </div></div></section>
+
+  <section class="share-btns">
+      <!-- <p> share it if you like it~ </p> -->
+      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text= id=" 为何使用-gitlab"><a">
+  Tweet
+</a"></a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+ -->
+  </section>
+</div>
+
+
+  
+</main>
+
+</body>
+</html>

@@ -38,13 +38,11 @@
   </section>
 
   <section class="article-entry">
-    <h1>什么是 Gitlab?</h1>
-<ol>
-<li>https://about.gitlab.com/</li>
+    <h1 id="什么是-Gitlab"><a href="#什么是-Gitlab" class="headerlink" title="什么是 Gitlab?"></a>什么是 Gitlab?</h1><ol>
+<li><a href="https://about.gitlab.com/" target="_blank" rel="noopener">https://about.gitlab.com/</a></li>
 <li><a href="https://gitlab.com/gitlab-org/gitlab-foss/blob/master/CHANGELOG.md" target="_blank" rel="noopener">官方版本升级记录</a></li>
 </ol>
-<h1>我选择 Gitlab 的初衷</h1>
-<p>一个好的项目管理方法，项目推进的过程中所有的结果都是被详细记录，统计。同时最好这些记录都应该是必须的行为，而不是额外的工作。比如每周写周报，这种就没必要。</p>
+<h1 id="我选择-Gitlab-的初衷"><a href="#我选择-Gitlab-的初衷" class="headerlink" title="我选择 Gitlab 的初衷"></a>我选择 Gitlab 的初衷</h1><p>一个好的项目管理方法，项目推进的过程中所有的结果都是被详细记录，统计。同时最好这些记录都应该是必须的行为，而不是额外的工作。比如每周写周报，这种就没必要。</p>
 <p>详细的历史记录需要有一个平台来记录。以前我使用过 Redmine, 这也是一个优秀的工单管理系统。但 Redmine 并不能和代码以及文档进行深度的交互。使用 Redmine 来管理项目的时候，只能先手动合并代码，再手动关闭工单。或者顺序反过来，不管如何，这样做总是繁琐的。 在以前我只管理 0-5 个人的小团队的时候,勤快一点基本上是没有任何问题的。但是随着人员的增多，项目的变化，如果想要及时的确认开发完成的代码或者文档(我们是一个特别注重开发文档的团队), 仍然使用 redmine 几乎会用掉我所有的时间。做为一个程序员，我肯定不会让这件事情发生。而且一个优秀的程序员，必定不能是勤快的。勤快必然导致思维的懒惰。</p>
 <p>所以我重新调研了平台，对新的平台设定了一些要求。其实主要还是对标 Github。</p>
 <ol>
@@ -58,70 +56,68 @@
 <p>不过，现在的公司承担的起了 :)  <a href="http://www.lejurobot.com/" target="_blank" rel="noopener">乐聚机器人</a>。所以我选择了 Gitlab, 一方面是现在公司不差这点钱，另一方面是基本上这个平台符合了我所有的设想。</p>
 <p>除了历史记录可以被修改。。。</p>
 <p>所以我从修改工单的标题，评论为不可编辑开始，进行了粗糙的改造。后来慢慢的同步升级，就变成了维护一个单独的分支。不过这并不是硬分叉，我只是在每次 Gitlab 升级的时候把我的修改合并上去而已。我主要还是使用了整个社区的工作成果。目前改动比较少，基本上没遇到过需要很大工作量才能同步的问题。并且核心的功能我并不会改动，这样就会变成硬分叉。涉及核心的功能，比如代码评审，我使用 API + Bot 做了一个外部流程。</p>
-<h1>升级日记的由来</h1>
-<p>维护我自己的 gitlab 分支已经有一段时间了，<a href="https://github.com/carlos-wong/gitlab-ce-carlos" target="_blank" rel="noopener">项目地址</a>。</p>
+<h1 id="升级日记的由来"><a href="#升级日记的由来" class="headerlink" title="升级日记的由来"></a>升级日记的由来</h1><p>维护我自己的 gitlab 分支已经有一段时间了，<a href="https://github.com/carlos-wong/gitlab-ce-carlos" target="_blank" rel="noopener">项目地址</a>。</p>
 <p>我的初衷是: 提供更严格的开发流程，以及不可修改历史记录。更严肃的工程实践。</p>
 <p>因为在实际的项目管理中，你其实不能信任任何人，包括自己 :)。 你只能信任不可修改的历史记录， 比如 <a href="https://git-scm.com/" target="_blank" rel="noopener">GIT</a>。 所以我从一开始只是对 UI 做简单的修改，去掉编辑 Comment 的按钮。慢慢随着项目的发展，应用场景的复杂化，我开始尝试进行更复杂的修改。</p>
 <p>因为我完全不会 Ruby ，所以只是修改任何一个小功能，对我来说都算是复杂的修改。</p>
 <p>随着版本功能的完善，一些朋友在开始在使用我定制的版本。所以应该有一个文档来记录改动的东西了。</p>
-<h1>这个版本我都做了什么?</h1>
-<h2>目前为止最重要的修改</h2>
-<p>仅仅是在页面上去掉对应的按钮，其实只能用来忽悠一下小白和产品经理。因为通过 API 其实也是能进行操作的，只不过 API 的调用稍稍有点门槛。随着团队小伙伴们对平台的熟悉，他们开始尝试调戏这个平台了。所以其实是因为不得已和为了防范风险，我要从根源上限制操作。即使有用户想要通过 API 操作内容, 如果在平台上没有给与他们正确的权限，他也不能操作。从原理上解决问题，才是一个优秀的程序员。 @<a href="https://github.com/nofeetbirds" target="_blank" rel="noopener">nofeetbird</a> :)</p>
+<h1 id="这个版本我都做了什么"><a href="#这个版本我都做了什么" class="headerlink" title="这个版本我都做了什么?"></a>这个版本我都做了什么?</h1><h2 id="目前为止最重要的修改"><a href="#目前为止最重要的修改" class="headerlink" title="目前为止最重要的修改"></a>目前为止最重要的修改</h2><p>仅仅是在页面上去掉对应的按钮，其实只能用来忽悠一下小白和产品经理。因为通过 API 其实也是能进行操作的，只不过 API 的调用稍稍有点门槛。随着团队小伙伴们对平台的熟悉，他们开始尝试调戏这个平台了。所以其实是因为不得已和为了防范风险，我要从根源上限制操作。即使有用户想要通过 API 操作内容, 如果在平台上没有给与他们正确的权限，他也不能操作。从原理上解决问题，才是一个优秀的程序员。 @<a href="https://github.com/nofeetbirds" target="_blank" rel="noopener">nofeetbird</a> :)</p>
 <p>所以经过一些尝试之后，我弄明白了 Gitlab 是如何管理用户权限的。所以我就对 Gitlab 的权限体系进行了为所欲为的修改，哈哈。</p>
-<h2>结合 12.5.6 ，我自己做出的修改</h2>
-<p>首先 Maintainer 的责任很大，所以他应该有确认工单是否完成，是否调整工单截止时间，重新分配工单的权利。</p>
+<h2 id="结合-12-5-6-，我自己做出的修改"><a href="#结合-12-5-6-，我自己做出的修改" class="headerlink" title="结合 12.5.6 ，我自己做出的修改"></a>结合 12.5.6 ，我自己做出的修改</h2><p>首先 Maintainer 的责任很大，所以他应该有确认工单是否完成，是否调整工单截止时间，重新分配工单的权利。</p>
 <p>Developer 的责任有限，所以要限制他们的某些行为。比如自行关闭工单，调整工单的截止时间。</p>
 <p>Developer 以上才能访问项目的文档和源码，因为这些已经涉及到保密信息。</p>
 <p>谁也不能修改平台上的记录，包括平台的管理员。</p>
-<h2>实现方法</h2>
-<ol>
-<li>涉及权限规则代码是存在哪里？</li>
-</ol>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./app/policies/project_policy.rb</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>权限是如何描述的？</li>
-</ol>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><ol>
+<li><p>涉及权限规则代码是存在哪里？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./app/policies/project_policy.rb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>权限是如何描述的？</p>
 <p>在 GitLab 中，每个项目有几个基本的角色: Guest,Reporter,Developer,Maintainer。权限从低到高，责任也是从小到大。</p>
 <p>Guest 基本上来跟进项目,并且不对项目进行实际推动的人。</p>
 <p>Reporter 项目问题的发现人，一般是测试人员。不过在我们的体系里面，测试发现的问题一般都和源代码的项目分开放置。</p>
 <p>Developer 项目的实际执行者，可能是开发人员，提交代码，提交相关资料。也可能是产品相关，提交需求文档。</p>
 <p>Maintainer 项目的责任人，负责确认每一件事情的完成情况。以及控制项目往正确的方向发展。</p>
 <p>在源文件的代码中,以 Developer 的权限声明来举例:</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">rule &#123; can?(:developer_access) &#125;.policy do</span><br><span class="line">  enable :read_merge_request</span><br><span class="line">  enable :download_code</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">rule &#123; can?(:reporter_access) &#125;.policy do</span><br><span class="line">  enable :admin_issue</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
-<p>以上是一段 Ruby 代码，但是其实你不需要懂 Ruby 的代码也能看明白。enable 代表允许对应的权限，<code>:</code> 后面声明的是对应权限的名称。当然 <code>:value</code> 在 Ruby 里应该是一个语法糖，可能是声明常量或者字符串。
-好的代码是不需要注释的，所以看这上面大部分的描述都能猜到功能。比如 <code>downlaod_code</code> 代表是否允许下载源代码。</p>
-<p>找到了以上的代码，你就能做一些基本的修改。比如 <code>:read_merge_request</code> 这个权限代表可以访问 Merge Request，在官方的版本上只要是 Reporter 以上的权限就可以访问源码。我认为不合适，大部分人在分配的时候都是直觉的认为只有从 Developer 以上才能访问源代码。</p>
-<p>这只是定制的第一步，因为这些权限的设定并不是对应着某一个功能点，而是对应着一类功能点。</p>
-<p>比如: <code>enable :admin_issue</code>, 代表拥有该权限的角色能够设置工单的基本信息。比如分配工单，更新工单的标签，设定工单的截止时间。</p>
-<p>结合我自己的想法，我需要给 Reporter 修改工单的权限，因为需要 Reporter 给工单分配标签来对工单进行分类。除了分配工单和设定工单的截止时间, 因为这是 Maintainer 的责任和权利。</p>
-<ol start="3">
-<li>是否可以增加一些新的权限？比如重新分配工单？</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">rule &#123; can?(:developer_access) &#125;.policy do</span><br><span class="line">  enable :read_merge_request</span><br><span class="line">  enable :download_code</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">rule &#123; can?(:reporter_access) &#125;.policy do</span><br><span class="line">  enable :admin_issue</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>  以上是一段 Ruby 代码，但是其实你不需要懂 Ruby 的代码也能看明白。enable 代表允许对应的权限，<code>:</code> 后面声明的是对应权限的名称。当然 <code>:value</code> 在 Ruby 里应该是一个语法糖，可能是声明常量或者字符串。<br>  好的代码是不需要注释的，所以看这上面大部分的描述都能猜到功能。比如 <code>downlaod_code</code> 代表是否允许下载源代码。</p>
+<p>  找到了以上的代码，你就能做一些基本的修改。比如 <code>:read_merge_request</code> 这个权限代表可以访问 Merge Request，在官方的版本上只要是 Reporter 以上的权限就可以访问源码。我认为不合适，大部分人在分配的时候都是直觉的认为只有从 Developer 以上才能访问源代码。</p>
+<p>  这只是定制的第一步，因为这些权限的设定并不是对应着某一个功能点，而是对应着一类功能点。</p>
+<p>  比如: <code>enable :admin_issue</code>, 代表拥有该权限的角色能够设置工单的基本信息。比如分配工单，更新工单的标签，设定工单的截止时间。</p>
+<p>  结合我自己的想法，我需要给 Reporter 修改工单的权限，因为需要 Reporter 给工单分配标签来对工单进行分类。除了分配工单和设定工单的截止时间, 因为这是 Maintainer 的责任和权利。</p>
+<ol start="3">
+<li><p>是否可以增加一些新的权限？比如重新分配工单？</p>
 <p>嗯，只能打开我的 Emacs 开始从代码上下手了。</p>
 <p>首先，我看了一下 <code>enable :admin_issue</code> 都在哪里用到。</p>
-<pre><code>- `app/services/issuable_base_service.rb` 这里面的 `filter_params` 函数使用了这个权限的定义
-- `ability_name = :&quot;admin_#{issuable.to_ability_name}&quot;` 构造了访问的权限
--  `    unless can?(current_user, ability_name, issuable)` 用来判断用户是否拥有对应的权限，如果没有则清空操作工单的参数
-
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">unless can?(current_user, ability_name, issuable)</span><br><span class="line">  params.delete(:milestone_id)</span><br><span class="line">  params.delete(:labels)</span><br><span class="line">  params.delete(:add_label_ids)</span><br><span class="line">  params.delete(:remove_label_ids)</span><br><span class="line">  params.delete(:label_ids)</span><br><span class="line">  params.delete(:assignee_ids)</span><br><span class="line">  params.delete(:assignee_id)</span><br><span class="line">  params.delete(:canonical_issue_id)</span><br><span class="line">  params.delete(:project)</span><br><span class="line">  params.delete(:discussion_locked)</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-</code></pre>
-<p>虽然我不会 Ruby 但是还是分析了一下代码。所以如果我想细化权限，我只要在 <code>./app/policies/project_policy.rb</code> 中声明一个新的权限，比如 <code>:assignee_issue</code>。接着只需要在 <code>app/services/issuable_base_service.rb</code> 根据我的理解简单的实现一下代码。</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unless can?(current_user, :assignee_issue, issuable)</span><br><span class="line">  params.delete(:assignee_ids)</span><br><span class="line">  params.delete(:assignee_id)</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
-<p>以上的代码意思是: 如果对应的用户没有 <code>:assignee_issue</code> 的权限，那么这段代码就会清空对应的 assignee 数据。</p>
-<ol start="4">
-<li>查缺补漏</li>
+<ul>
+<li><code>app/services/issuable_base_service.rb</code> 这里面的 <code>filter_params</code> 函数使用了这个权限的定义</li>
+<li><code>ability_name = :&quot;admin_#{issuable.to_ability_name}&quot;</code> 构造了访问的权限</li>
+<li><p><code>unless can?(current_user, ability_name, issuable)</code> 用来判断用户是否拥有对应的权限，如果没有则清空操作工单的参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">unless can?(current_user, ability_name, issuable)</span><br><span class="line">  params.delete(:milestone_id)</span><br><span class="line">  params.delete(:labels)</span><br><span class="line">  params.delete(:add_label_ids)</span><br><span class="line">  params.delete(:remove_label_ids)</span><br><span class="line">  params.delete(:label_ids)</span><br><span class="line">  params.delete(:assignee_ids)</span><br><span class="line">  params.delete(:assignee_id)</span><br><span class="line">  params.delete(:canonical_issue_id)</span><br><span class="line">  params.delete(:project)</span><br><span class="line">  params.delete(:discussion_locked)</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
 </ol>
+<p>   虽然我不会 Ruby 但是还是分析了一下代码。所以如果我想细化权限，我只要在 <code>./app/policies/project_policy.rb</code> 中声明一个新的权限，比如 <code>:assignee_issue</code>。接着只需要在 <code>app/services/issuable_base_service.rb</code> 根据我的理解简单的实现一下代码。</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unless can?(current_user, :assignee_issue, issuable)</span><br><span class="line">  params.delete(:assignee_ids)</span><br><span class="line">  params.delete(:assignee_id)</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>   以上的代码意思是: 如果对应的用户没有 <code>:assignee_issue</code> 的权限，那么这段代码就会清空对应的 assignee 数据。</p>
+<ol start="4">
+<li><p>查缺补漏</p>
 <p>还记得 <code>ability_name = :&quot;admin_#{issuable.to_ability_name}&quot;</code> 这个构造吗？为何不是直接声明为 <code>:admin_issue</code>? 因为 Merege Request 也是使用了同一个函数啊。所以我上面的实现引发了一个 Bug, 限制了 Developer 及以下的角色不能重新分配工单，但是也限制了他们不能在 Merge Request 中分配给代码审核机器人。嗯，一个机器人公司，主要就是做机器人嘛。</p>
 <p>知道了这个问题之后，我增加了一些代码，不过其实还不够优雅。但是时间有限，先完成功能再说。</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if ability_name == :admin_issue</span><br><span class="line">  unless can?(current_user, :assignee_issue, issuable)</span><br><span class="line">    params.delete(:assignee_ids)</span><br><span class="line">    params.delete(:assignee_id)</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
-<p>以上的代码增加了一个前提，只有在更新工单的时候才会使用 <code>:assignee_issue</code> 的检查逻辑。</p>
-<ol start="5">
-<li>总结</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if ability_name == :admin_issue</span><br><span class="line">  unless can?(current_user, :assignee_issue, issuable)</span><br><span class="line">    params.delete(:assignee_ids)</span><br><span class="line">    params.delete(:assignee_id)</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>  以上的代码增加了一个前提，只有在更新工单的时候才会使用 <code>:assignee_issue</code> 的检查逻辑。</p>
+<ol start="5">
+<li><p>总结</p>
 <p>我的分支的发布节奏，基本上是随着 GitLab 的开发周期。站在巨人的肩膀上，同时所有的内容开源，所以并没有损害社区。</p>
 <p>软件开发工作的魅力，是对自己使用工具的为所欲为。能修改 GitLab 来符合自己的需求，总比生搬硬套的使用 GitLab 流程来进行项目管理要好。可能我的管理方法不够完善，但至少是符合实际情况的，能被现在团队的人掌握的。</p>
 <p>有可能反复的修改之后我所有的修改都撤销了，最后直接使用 GitLab 的官方版本。没关系，至少现在乐在其中, 并且符合实际。</p>
 <p>这是修改的代码: <a href="https://github.com/carlos-wong/gitlab-ce-carlos/compare/carlos/12.5.6...carlos/12.5.6.5" target="_blank" rel="noopener">Diff</a></p>
+</li>
+</ol>
 
   </section>
 </article>
@@ -137,8 +133,7 @@
 
   <section class="share-btns">
       <!-- <p> share it if you like it~ </p> -->
-      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=>什么是 Gitlab?</h1>
-<o">
+      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text= id=" 什么是-gitlab"><a ">
   Tweet
 </a>
 
@@ -161,7 +156,7 @@
   return t;
 }(document, "script", "twitter-wjs"));
 </script>
- -->
+</a> -->
   </section>
 </div>
 
