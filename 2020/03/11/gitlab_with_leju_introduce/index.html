@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>使用 Gitlab 作为软件研发协作平台 | 极客世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+</html>
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2020/03/11/gitlab_with_leju_introduce/">使用 Gitlab 作为软件研发协作平台</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">March 11 2020</p>
+  </section>
+
+  <section class="article-entry">
+    <div id="content">
+<div id="outline-container-orgaa4f004" class="outline-2">
+<h2 id="orgaa4f004">&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h2>
+<div class="outline-text-2" id="text-orgaa4f004">
+<p>
+Gitlab: <a href="https://about.gitlab.com/" target="_blank" rel="noopener">https://about.gitlab.com/</a>
+</p>
+
+<p>
+&#x662F;&#x4E00;&#x4E2A;&#x5728;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x884C;&#x4E1A;&#x975E;&#x5E38;&#x51FA;&#x540D;&#x7684;&#x5E73;&#x53F0;&#x3002;&#x5728;&#x4E50;&#x805A;&#x6211;&#x4EEC;&#x5C06; Gitlab &#x548C;&#x8F6F;&#x4EF6;&#x7814;&#x53D1;&#x8FDB;&#x884C;&#x4E86;&#x9AD8;&#x5EA6;&#x7684;&#x96C6;&#x6210;&#x548C;&#x878D;&#x5408;&#x3002;
+</p>
+
+<p>
+&#x4E3B;&#x8981;&#x89E3;&#x51B3;&#x4E00;&#x4E0B;&#x95EE;&#x9898;:
+</p>
+
+<ol class="org-ol">
+<li>&#x7528;&#x6237;&#x53CD;&#x9988;&#x7BA1;&#x7406;&#x3002;</li>
+<li>&#x9700;&#x6C42;&#x641C;&#x96C6;&#xFF0C;&#x8BA8;&#x8BBA;&#xFF0C;&#x7BA1;&#x7406;&#x3002;</li>
+<li>&#x5BF9;&#x9879;&#x76EE;&#x63A8;&#x8FDB;&#x8FDB;&#x5EA6;&#x8FDB;&#x884C;&#x8DDF;&#x8E2A;&#x3002;</li>
+<li>&#x7269;&#x54C1;&#x7BA1;&#x7406;</li>
+</ol>
+
+<p>
+&#x4EE5;&#x4E0B;&#x63CF;&#x8FF0;&#x7684; lejuhub &#x5B9E;&#x9645;&#x4E0A;&#x662F; Gitlab&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x6211;&#x4EEC;&#x662F;&#x90E8;&#x7F72;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x3002;&#x4E3A;&#x4E86;&#x548C;&#x5B98;&#x65B9;&#x7684;&#x5E73;&#x53F0;&#x533A;&#x5206;&#xFF0C;&#x6211;&#x4EEC;&#x4E0B;&#x9762;&#x4F1A;&#x4F7F;&#x7528; lejuhub &#x6765;&#x79F0;&#x547C;&#x5F53;&#x524D;&#x7684;&#x5E73;&#x53F0;&#x3002;
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgac47790" class="outline-2">
+<h2 id="orgac47790">&#x5BF9; lejuhub &#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x7684;&#x4ECB;&#x7ECD;</h2>
+<div class="outline-text-2" id="text-orgac47790">
+<ul class="org-ul">
+<li><p>
+Assignee
+</p>
+
+<p>
+&#x6BCF;&#x4E2A;&#x4E8B;&#x7269;&#x90FD;&#x5E94;&#x8BE5;&#x6709;&#x4E00;&#x4E2A;&#x8D23;&#x4EFB;&#x4EBA;&#xFF0C;&#x6216;&#x8005;&#x53EB;&#x8D1F;&#x8D23;&#x4EBA;&#x3002;
+</p>
+
+<p>
+&#x4E00;&#x4EF6;&#x4E8B;&#x60C5;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x8D1F;&#x8D23;&#x4EBA;&#xFF0C;&#x6700;&#x540E;&#x5C31;&#x4F1A;&#x6D41;&#x4E8E;&#x5F62;&#x5F0F;, &#x5927;&#x90E8;&#x5206;&#x4EBA;&#x90FD;&#x4F1A;&#x89C9;&#x5F97;&#x8FD9;&#x4EF6;&#x4E8B;&#x60C5;&#x5E94;&#x8BE5;&#x662F;&#x522B;&#x4EBA;&#x505A;&#x3002;&#x5982;&#x679C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8D1F;&#x8D23;&#x4EBA;&#xFF0C;&#x53EA;&#x8981;&#x7ED9;&#x4ED6;&#x8DB3;&#x591F;&#x7684;&#x7A7A;&#x95F4;&#x548C;&#x8D44;&#x6E90;&#xFF0C;&#x4ED6;&#x5C31;&#x80FD;&#x5C3D;&#x5FC3;&#x5C3D;&#x529B;&#x3002;
+</p></li>
+
+<li><p>
+Issue
+</p>
+
+<p>
+&#x57FA;&#x672C;&#x4E0A;&#x5C31;&#x662F;&#x4EE3;&#x8868;&#x4E00;&#x4EF6;&#x4E8B;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x7269;&#x54C1;&#x7BA1;&#x7406;&#x7684;&#x573A;&#x666F;&#x91CC;&#x9762;&#xFF0C;&#x6211;&#x7528;&#x5B83;&#x6765;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x7269;&#x54C1;&#x3002;
+</p></li>
+
+<li><p>
+Issue title
+</p>
+
+<p>
+&#x4E00;&#x4E2A; Issue &#x7684;&#x6807;&#x9898;&#x3002;&#x4E00;&#x822C;&#x5C31;&#x50CF;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x9898;&#x76EE;&#x3002;
+</p>
+
+<p>
+&#x5982;&#x679C;&#x6807;&#x9898;&#x5199;&#x5F97;&#x597D;&#x5C31;&#x50CF;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x5199;&#x5F97;&#x597D;&#xFF0C;&#x4F1A;&#x8BA9;&#x8DDF;&#x8FDB;&#x7684;&#x4EBA;&#x5FEB;&#x901F;&#x7684;&#x4E86;&#x89E3;&#x57FA;&#x7840;&#x80CC;&#x666F;&#x4FE1;&#x606F;&#x3002;&#x540C;&#x65F6;&#x53C8;&#x80FD;&#x4FBF;&#x4E8E;&#x641C;&#x7D22;&#x3002;
+</p>
+
+<p>
+&#x5728;&#x7269;&#x54C1;&#x7BA1;&#x7406;&#x7684;&#x573A;&#x666F;&#x91CC;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x4EE3;&#x8868;&#x7269;&#x54C1;&#x7684;&#x540D;&#x79F0;&#x3002;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x4F60;&#x7269;&#x54C1;&#x7684;&#x540D;&#x79F0;&#x8D77;&#x7684;&#x8DB3;&#x591F;&#x8BE6;&#x7EC6;&#xFF0C;&#x90A3;&#x4E48;&#x641C;&#x7D22;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x8D8A;&#x65B9;&#x4FBF;&#x3002;
+</p></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+Close Issue
+</p>
+
+<p>
+&#x5BF9;&#x4E00;&#x4E2A; Issue &#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x4EE3;&#x8868;&#x7684;&#x4E8B;&#x7269;&#x7684;&#x5B8C;&#x7ED3;&#x3002;
+</p></li>
+
+<li><p>
+Bot
+</p>
+
+<p>
+&#x6211;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x7A0B;&#x5E8F;&#x3002;&#x5B83;&#x80FD;&#x4EE3;&#x66FF;&#x4EBA;&#x5DE5;&#xFF0C;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x91CD;&#x590D;&#x6027;&#x7684;&#xFF0C;&#x590D;&#x6742;&#x7684;&#x5DE5;&#x4F5C;&#x3002;
+</p></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org30c8b6e" class="outline-2">
+<h2 id="org30c8b6e">&#x7528;&#x6237;&#x53CD;&#x9988;&#x7BA1;&#x7406;</h2>
+<div class="outline-text-2" id="text-org30c8b6e">
+<p>
+&#x5728;&#x4E50;&#x805A;&#x63D0;&#x4F9B;&#x7684;&#x8F6F;&#x4EF6;&#x4E2D;&#x6240;&#x6709;&#x7528;&#x6237;&#x53CD;&#x9988;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x6536;&#x96C6;&#x5230; lejuhub &#x4E2D;&#x3002;&#x6BCF;&#x4E2A;&#x53CD;&#x9988;&#x90FD;&#x4F1A;&#x4EE5;&#x4E00;&#x4E2A; Issue &#x7684;&#x5F62;&#x5F0F;&#x6765;&#x4FDD;&#x5B58;&#x3002;&#x901A;&#x8FC7;&#x5206;&#x914D; Issue &#xFF0C;&#x8BB0;&#x5F55; Issue &#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9AD8;&#x6548;&#x5730;&#x5904;&#x7406;&#x5BA2;&#x6237;&#x53CD;&#x9988;&#x7684;&#x95EE;&#x9898;&#x3002;
+</p>
+
+<p>
+&#x540C;&#x65F6;&#x901A;&#x8FC7;&#x5206;&#x6790;&#x53CD;&#x9988;&#x4FE1;&#x606F;&#x7684;&#x79CD;&#x7C7B;&#xFF0C;&#x9891;&#x7387;&#x3002;&#x6211;&#x4EEC;&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x5BF9;&#x4EA7;&#x54C1;&#x7684;&#x5E02;&#x573A;&#x53CD;&#x5E94;&#x6709;&#x4E00;&#x4E2A;&#x79D1;&#x5B66;&#x7684;&#x5206;&#x6790;&#x4F9D;&#x636E;&#x3002;
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org7a4f70c" class="outline-2">
+<h2 id="org7a4f70c">&#x9700;&#x6C42;&#x641C;&#x96C6;&#xFF0C;&#x8BA8;&#x8BBA;&#xFF0C;&#x7BA1;&#x7406;</h2>
+<div class="outline-text-2" id="text-org7a4f70c">
+<p>
+&#x901A;&#x8FC7;&#x5C06;&#x6BCF;&#x4E2A;&#x9700;&#x6C42;&#x70B9;&#x8F6C;&#x5316;&#x4E3A; lejuhub &#x7684; Merge Request&#xFF0C;&#x9700;&#x6C42;&#x7684;&#x641C;&#x96C6;&#xFF0C;&#x8BA8;&#x8BBA;&#x548C;&#x8BC4;&#x5BA1;&#x90FD;&#x88AB;&#x8BE6;&#x7EC6;&#x5B8C;&#x6574;&#x5730;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002;
+</p>
+
+<p>
+&#x53E6;&#x5916;&#x6211;&#x4EEC;&#x81EA;&#x7814;&#x4E86;&#x4E00;&#x4E9B;&#x6D41;&#x7A0B;&#x63A8;&#x8FDB;&#x673A;&#x5668;&#x4EBA;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x65E5;&#x5E38;&#x7684;&#x63D0;&#x9192;&#x548C;&#x6D41;&#x7A0B;&#x63A8;&#x8FDB;&#x3002;&#x6BD4;&#x5982;&#x67D0;&#x4E2A;&#x9700;&#x6C42;&#x957F;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x8BA8;&#x8BBA;&#xFF0C;&#x6216;&#x8005;&#x67D0;&#x4E9B;&#x8BA8;&#x8BBA;&#x6CA1;&#x6709;&#x5F97;&#x5230;&#x56DE;&#x590D;&#x3002;
+</p>
+
+<p>
+<a href="https://carlos-wong.github.io/2017/03/05/product-dev-committee-process-SOP">&#x5177;&#x4F53;&#x7EC6;&#x5219;</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdadf39c" class="outline-2">
+<h2 id="orgdadf39c">&#x9879;&#x76EE;&#x7BA1;&#x7406;</h2>
+<div class="outline-text-2" id="text-orgdadf39c">
+<p>
+&#x8BC4;&#x5BA1;&#x901A;&#x8FC7;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x8FDB;&#x5165;&#x9700;&#x6C42;&#x6C60;&#x3002;&#x5728;&#x5F00;&#x53D1;&#x5468;&#x671F;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x4ECE;&#x9700;&#x6C42;&#x6C60;&#x4E2D;&#x63D0;&#x53D6;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#x7684;&#x9700;&#x6C42;&#x3002;
+</p>
+
+<p>
+&#x6B64;&#x65F6;&#x5F00;&#x53D1;&#x8D1F;&#x8D23;&#x4EBA;&#x4F1A;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x9700;&#x6C42;&#x5206;&#x914D;&#x91CC;&#x7A0B;&#x7891;&#xFF0C;&#x53EA;&#x6709;&#x91CC;&#x7A0B;&#x7891;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x9700;&#x6C42;&#x7684;&#x5185;&#x5BB9;&#x624D;&#x4F1A;&#x88AB;&#x5408;&#x5E76;&#x5230;&#x6B63;&#x5F0F;&#x7684;&#x9700;&#x6C42;&#x6587;&#x6863;&#x4E2D;&#x3002;
+</p>
+
+<p>
+&#x8FD9;&#x4E2A;&#x6D41;&#x7A0B;&#x4E2D;&#x4E5F;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x673A;&#x5668;&#x4EBA;&#xFF0C;&#x6BD4;&#x5982;&#x5B9A;&#x65F6;&#x8DDF;&#x8E2A;&#x91CC;&#x7A0B;&#x7891;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x3002;&#x8DDF;&#x8E2A;&#x9700;&#x6C42;&#x5B9A;&#x4E0B;&#x7684; deadline, &#x5728; deadline &#x5373;&#x5C06;&#x8D85;&#x671F;&#x7684;&#x65F6;&#x5019;&#x8FDB;&#x884C;&#x63D0;&#x9192;&#x3002;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org07450d2" class="outline-2">
+<h2 id="org07450d2">&#x7269;&#x54C1;&#x7BA1;&#x7406;</h2>
+<div class="outline-text-2" id="text-org07450d2">
+<p>
+&#x5F00;&#x53D1;&#x7528;&#x7684;&#x7535;&#x8111;&#xFF0C;&#x624B;&#x673A;&#x8BBE;&#x5907;&#x7B49;&#x3002;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x4EE5;&#x4E00;&#x4E2A; Issue &#x6765;&#x8BB0;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5FEB;&#x6377;&#x5730;&#x76D8;&#x70B9;&#x548C;&#x67E5;&#x8BE2;&#x3002;
+</p>
+
+<p>
+<a href="https://carlos-wong.github.io/2020/01/21/gitlab-as-crm-of-stuff/">&#x5177;&#x4F53;&#x7EC6;&#x5219;&#x89C1;</a>
+</p>
+</div>
+</div>
+</div>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/1055130?s=460&v=4" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> 极客世界 </p>
+      <p class="subtitle"> 乐聚机器人研发总监 | 黄怀贤 </p>
+    <div>
+  </div></div></section>
+
+  <section class="share-btns">
+      <!-- <p> share it if you like it~ </p> -->
+      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=v id=" content">
+<div">
+  Tweet
+</div"></a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+ -->
+  </section>
+</div>
+
+
+  
+</main>
+
+</body>
+</html>
