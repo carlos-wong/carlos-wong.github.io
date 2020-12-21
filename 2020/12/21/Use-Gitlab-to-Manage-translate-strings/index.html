@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>基于 Gitlab 的多国语言管理方法 | 极客世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+</html>
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2020/12/21/Use-Gitlab-to-Manage-translate-strings/">基于 Gitlab 的多国语言管理方法</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">December 21 2020</p>
+  </section>
+
+  <section class="article-entry">
+    <div id="content">
+
+<div id="outline-container-orgd7b5a04" class="outline-2">
+<h2 id="orgd7b5a04">&#x7B80;&#x4ECB;</h2>
+<div class="outline-text-2" id="text-orgd7b5a04">
+<p>
+&#x5982;&#x679C;&#x4F60;&#x6B63;&#x5728;&#x4F7F;&#x7528; Gitlab &#x6216;&#x8005; Github &#xFF0C;&#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x4F60;&#x6709;&#x5E2E;&#x52A9;&#x3002;&#x901A;&#x8FC7;&#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x80FD;&#x65B9;&#x4FBF;&#x5FEB;&#x6377;&#x5730;&#x5BF9;&#x7FFB;&#x8BD1;&#x8BCD;&#x6761;&#x7684;&#x8FDB;&#x884C;&#x5BA1;&#x6838;&#xFF0C;&#x8BA8;&#x8BBA;&#x4EE5;&#x53CA;&#x66F4;&#x65B0;&#x3002;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org182f39c" class="outline-2">
+<h2 id="org182f39c">&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8FC7;&#x7684;&#x5DE5;&#x5177;</h2>
+<div class="outline-text-2" id="text-org182f39c">
+<ol class="org-ol">
+<li>&#x4F7F;&#x7528; Excel &#x6765;&#x6574;&#x7406;&#x548C;&#x540C;&#x6B65;&#x8BCD;&#x6761;</li>
+
+<li><p>
+Jabylon
+</p>
+
+<p>
+&#x5B98;&#x7F51;&#xFF1A;<a href="https://jabylon.org/" target="_blank" rel="noopener">https://jabylon.org/</a>
+</p>
+
+<p>
+&#x7279;&#x70B9;&#xFF1A;&#x652F;&#x6301; Android,iOS,&#x4EE5;&#x53CA; Java &#x7684; .properties &#x683C;&#x5F0F;&#x6587;&#x4EF6;&#x3002;
+</p>
+
+<p>
+&#x95EE;&#x9898;&#xFF1A;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x66F4;&#x65B0;&#x4E3A; 2017 &#x5E74;&#x3002;
+</p></li>
+
+<li><p>
+Weblate
+</p>
+
+<p>
+&#x5B98;&#x7F51;: <a href="https://weblate.org/zh-hans/" target="_blank" rel="noopener">https://weblate.org/zh-hans/</a>
+</p>
+
+<p>
+&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x4F18;&#x70B9;:
+</p>
+
+<ol class="org-ol">
+<li>&#x548C; Git &#x9AD8;&#x5EA6;&#x96C6;&#x6210;&#xFF0C;&#x66F4;&#x65B0;&#x7684;&#x8BCD;&#x6761;&#x90FD;&#x662F;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4E2A; commit &#x63D0;&#x4EA4;&#x5230; Git &#x4E2D;&#x3002;&#x8FD9;&#x6837;&#x4E5F;&#x80FD;&#x65B9;&#x4FBF;&#x5730;&#x4ECE;&#x539F;&#x6765;&#x56DE;&#x6EAF;&#x5230;&#x5185;&#x5BB9;&#x7684;&#x4F5C;&#x8005;&#x3002;</li>
+<li>&#x53EA;&#x8981;&#x8BBE;&#x7F6E;&#x597D;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;Weblate &#x5C31;&#x80FD;&#x81EA;&#x52A8;&#x5730;&#x68C0;&#x6D4B;&#x51FA;&#x76F8;&#x5173;&#x7684;&#x7FFB;&#x8BD1;&#x95EE;&#x9898;&#xFF0C;&#x5E76;&#x89E3;&#x6790;&#x6210;&#x53EF;&#x4EE5;&#x88AB;&#x7F16;&#x8F91;&#x7684;&#x8BCD;&#x6761;&#x3002;</li>
+<li>&#x652F;&#x6301;&#x4F17;&#x591A;&#x7684;&#x683C;&#x5F0F; <a href="https://docs.weblate.org/en/latest/formats.html" target="_blank" rel="noopener">https://docs.weblate.org/en/latest/formats.html</a></li>
+<li>&#x7EC6;&#x81F4;&#x4E14;&#x5B8C;&#x6574;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236; <a href="https://docs.weblate.org/en/latest/admin/access.html" target="_blank" rel="noopener">https://docs.weblate.org/en/latest/admin/access.html</a></li>
+<li>&#x652F;&#x6301;&#x7B2C;&#x4E09;&#x65B9;&#x767B;&#x5F55; <a href="https://docs.weblate.org/en/latest/admin/auth.html#authentication-backends" target="_blank" rel="noopener">https://docs.weblate.org/en/latest/admin/auth.html#authentication-backends</a> &#xFF0C;&#x7279;&#x522B;&#x662F; Gitlab <a href="https://docs.weblate.org/en/latest/admin/auth.html#gitlab-oauth-2" target="_blank" rel="noopener">https://docs.weblate.org/en/latest/admin/auth.html#gitlab-oauth-2</a></li>
+</ol>
+
+<p>
+&#x603B;&#x7ED3;&#xFF1A;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;&#x5728;&#x73B0;&#x5728;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x8FC1;&#x79FB;&#x5230;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x516C;&#x53F8;&#x5927;&#x90E8;&#x5206;&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x7684;&#x8FD8;&#x662F; Weblate
+</p></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgb8d33f0" class="outline-2">
+<h2 id="orgb8d33f0">&#x4F7F;&#x7528;&#x5FC3;&#x5F97;</h2>
+<div class="outline-text-2" id="text-orgb8d33f0">
+<ol class="org-ol">
+<li>Excel &#x7684;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#x8F83;&#x9AD8;&#xFF0C;&#x6BCF;&#x6B21;&#x6539;&#x52A8;&#x5185;&#x5BB9;&#x90FD;&#x9700;&#x8981;&#x624B;&#x5DE5;&#x6821;&#x5BF9;&#x3002;&#x4EA7;&#x54C1;&#x6539;&#x4E00;&#x904D;&#xFF0C;&#x5F00;&#x53D1;&#x518D;&#x590D;&#x5236;&#x6E90;&#x7801;&#x4ED3;&#x5E93;&#x4E2D;&#x3002;&#x5E76;&#x4E14;&#x60F3;&#x8981;&#x627E;&#x51FA;&#x53D8;&#x5316;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EA;&#x80FD;&#x4F9D;&#x9760;&#x4EBA;&#x8089;&#x6BD4;&#x5BF9;&#x548C;&#x6C9F;&#x901A;&#x3002;&#x540C;&#x65F6;&#x65E0;&#x6CD5;&#x5FEB;&#x901F;&#x7684;&#x9488;&#x5BF9;&#x67D0;&#x4E2A;&#x8BCD;&#x6761;&#x8FDB;&#x884C;&#x8BA8;&#x8BBA;&#x548C;&#x6539;&#x8FDB;&#x3002;&#x6BD4;&#x5982;&#xFF1A;&#x67D0;&#x4E2A;&#x8BCD;&#x6761;&#x7FFB;&#x8BD1;&#x5E76;&#x4E0D;&#x662F;&#x7279;&#x522B;&#x6587;&#x96C5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5F00;&#x53D1;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5728;&#x6C9F;&#x901A;&#x7FA4;&#x7EC4;&#x4E2D;&#x548C;&#x4EA7;&#x54C1;&#x8FDB;&#x884C;&#x6C9F;&#x901A;&#xFF0C;&#x518D;&#x7531;&#x4EA7;&#x54C1;&#x53D1;&#x51FA;&#x4FEE;&#x8BA2;&#x4E4B;&#x540E;&#x7684; Excel &#x6587;&#x6863;&#x3002;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x591A;&#x6B21;&#x6539;&#x52A8;&#x7684;&#x60C5;&#x51B5;&#x5C31;&#x4F1A;&#x8017;&#x8D39;&#x5927;&#x91CF;&#x7684;&#x4EBA;&#x529B;&#x53BB;&#x505A;&#x91CD;&#x590D;&#x7684;&#x4E8B;&#x60C5;&#x3002;</li>
+<li>JABYLON &#x89E3;&#x51B3;&#x4E86;&#x6821;&#x5BF9;&#x548C;&#x4FEE;&#x8BA2;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4F46;&#x662F;&#x65E0;&#x6CD5;&#x7B80;&#x5355;&#x5FEB;&#x6377;&#x7684;&#x8FDB;&#x884C;&#x8BA8;&#x8BBA;&#x3002;&#x5E76;&#x4E14;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x73B0;&#x5982;&#x679C;&#x662F;&#x5728;&#x7FFB;&#x8BD1;&#x7684;&#x6587;&#x6863;&#x4E2D;&#x51FA;&#x73B0;&#x4E2D;&#x6587;&#xFF0C;&#x4F1A;&#x8BA9;&#x5BFC;&#x51FA;&#x7684; iOS &#x7FFB;&#x8BD1;&#x6587;&#x4EF6;&#x51FA;&#x73B0;&#x7F16;&#x7801;&#x9519;&#x8BEF;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5728;&#x4F7F;&#x7528; JABYLON &#x7684;&#x65F6;&#x5019;&#x4E5F;&#x9047;&#x5230;&#x5BFC;&#x51FA;&#x5230; iOS &#x7684;&#x8BCD;&#x6761;&#x51FA;&#x73B0;&#x7F16;&#x7801;&#x9519;&#x8BEF;&#x7684;&#x95EE;&#x9898;&#xFF0C;<a href="https://github.com/carlos-wong/emacs-jabylon-ios" target="_blank" rel="noopener">https://github.com/carlos-wong/emacs-jabylon-ios</a> &#x8FD9;&#x4E2A; Emacs &#x7684;&#x5305;&#x5E94;&#x8BE5;&#x80FD;&#x5E2E;&#x5230;&#x4F60;&#x3002;</li>
+<li>Weblate &#x89E3;&#x51B3;&#x4E86; JABYLON &#x7F16;&#x7801;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x540C;&#x65F6;&#x80FD;&#x548C; Gitlab &#x670D;&#x52A1;&#x5F88;&#x597D;&#x5730;&#x7ED3;&#x5408;&#x5230;&#x4E00;&#x8D77;, &#x80FD;&#x6839;&#x636E;&#x63D0;&#x524D;&#x914D;&#x7F6E;&#x597D;&#x7684; branch &#x6765;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;&#x4FEE;&#x6539;&#x7684;&#x8BCD;&#x6761;&#x3002;&#x4E0D;&#x8FC7;&#x8FD8;&#x662F;&#x5B58;&#x5728;&#x4E0D;&#x80FD;&#x4FBF;&#x6377;&#x5730;&#x5BF9;&#x7FFB;&#x8BD1;&#x8BCD;&#x6761;&#x8FDB;&#x884C;&#x8BA8;&#x8BBA;&#x4EE5;&#x53CA;&#x5FEB;&#x901F;&#x8FED;&#x4EE3;&#x3002;&#x56E0;&#x4E3A;&#x8BA8;&#x8BBA;&#x7684;&#x8BB0;&#x5F55;&#x662F;&#x5355;&#x72EC;&#x4FDD;&#x7559;&#x5728; weblate &#x4E0A;&#x7684;&#xFF0C;&#x540E;&#x7EED;&#x5728;&#x56DE;&#x6EAF;&#x7684;&#x65F6;&#x5019;&#x8BA8;&#x8BBA;&#x7684;&#x5185;&#x5BB9;&#x4E0D;&#x80FD;&#x548C;&#x63D0;&#x4EA4;&#x7684;&#x4EE3;&#x7801;&#x5173;&#x8054;&#x5230;&#x4E00;&#x8D77;&#x3002;</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgd9b83c0" class="outline-2">
+<h2 id="orgd9b83c0">&#x5982;&#x4F55;&#x7ED3;&#x5408; Gitlab &#x6765;&#x63A8;&#x8FDB;&#x7FFB;&#x8BD1;&#x5DE5;&#x4F5C;&#x7684;&#x8FDB;&#x884C;&#x4EE5;&#x53CA;&#x81EA;&#x52A8;&#x6574;&#x5408;&#x5230;&#x9879;&#x76EE;&#x7684;&#x6E90;&#x7801;&#x4E2D;</h2>
+<div class="outline-text-2" id="text-orgd9b83c0">
+<p>
+&#x4F17;&#x6240;&#x5468;&#x77E5;&#x6211;&#x4EEC;&#x662F;&#x4F7F;&#x7528; <a href="https://carlos-wong.github.io/2020/03/11/product-dev-committee-process-SOP/">&#x8F6F;&#x4EF6;&#x7814;&#x53D1;&#x6D41;&#x7A0B;</a> &#x6765;&#x8FDB;&#x884C;&#x9700;&#x6C42;&#x6587;&#x6863;&#x7684;&#x8BA8;&#x8BBA;&#x548C;&#x8FED;&#x4EE3;&#x7684; :)&#x3002;&#x57FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x7FFB;&#x8BD1;&#x7684;&#x6587;&#x6863;&#x5F53;&#x6210;&#x9700;&#x6C42;&#x6587;&#x6863;&#x6765;&#x7EF4;&#x62A4;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x4F7F;&#x7528;&#x539F;&#x6709;&#x7684;&#x6D41;&#x7A0B;&#x6765;&#x8BA8;&#x8BBA;&#x548C;&#x4FEE;&#x8BA2;&#x7FFB;&#x8BD1;&#x7684;&#x8BCD;&#x6761;&#x3002;&#x518D;&#x7ED3;&#x5408; Gitlab Runner (&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x7684;&#x662F; Github &#x7684;&#x8BDD;&#x5176;&#x5B9E;&#x539F;&#x7406;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x4F7F;&#x7528;&#x7684;&#x662F; Github Action) &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5C06; CSV &#x683C;&#x5F0F;&#x8F6C;&#x5316;&#x4E3A;&#x5DE5;&#x7A0B;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x7FFB;&#x8BD1;&#x540C;&#x6B65;&#x5230;&#x9879;&#x76EE;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x81EA;&#x52A8;&#x5316;&#x3002;
+</p>
+
+<p>
+&#x4EE5;&#x4E0B;&#x662F;&#x5BF9;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x7684;&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x3002;
+</p>
+
+<ol class="org-ol">
+<li>&#x7531;&#x4EA7;&#x54C1;&#x5C06;&#x8981;&#x6574;&#x7406;&#x597D;&#x7684;&#x7FFB;&#x8BD1;&#x8BCD;&#x6761;(&#x4EE5; csv &#x4E3A;&#x683C;&#x5F0F;&#xFF0C;Excel &#x53EF;&#x4EE5;&#x5BFC;&#x51FA;&#x548C;&#x6253;&#x5F00; csv &#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;)&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A; Merge Request &#x6765;&#x63D0;&#x4EA4;&#x3002;</li>
+<li><p>
+&#x76F8;&#x5173;&#x4EBA;&#x5458;&#x5C31;&#x80FD;&#x5728; Merge Request &#x4E2D;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x8BCD;&#x6761;&#x8FDB;&#x884C;&#x8BC4;&#x8BBA;&#x548C;&#x95EE;&#x9898;&#x3002;
+</p>
+
+
+<div class="figure">
+<p><img src="http://carlosupload.lejuhub.com/img/20201221145850.png">
+</p>
+</div></li>
+
+<li><p>
+&#x591A;&#x6B21;&#x4FEE;&#x8BA2;&#x4E4B;&#x540E;&#x5F53;&#x524D;&#x7684;&#x7FFB;&#x8BD1;&#x4EE5;&#x53CA;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x3002;
+</p>
+
+
+<div class="figure">
+<p><img src="http://carlosupload.lejuhub.com/img/20201221112509.png">
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="http://carlosupload.lejuhub.com/img/20201221112548.png">
+</p>
+</div></li>
+
+<li>&#x6BCF;&#x6B21; Merge Request &#x53D1;&#x751F;&#x6539;&#x52A8;&#x90FD;&#x4F1A;&#x89E6;&#x53D1; Gitlab &#x7684; CI, CI &#x7684;&#x5DE5;&#x5177;&#x4F1A;&#x5C06;&#x7FFB;&#x8BD1;&#x7684;&#x6587;&#x4EF6;&#x8F6C;&#x5316;&#x4E3A; Android,iOS,Web &#x5BF9;&#x5E94;&#x683C;&#x5F0F;&#x7684;&#x591A;&#x56FD;&#x8BED;&#x8A00;&#x6587;&#x4EF6;&#x3002;&#x5E76;&#x5728; CI &#x7684;&#x811A;&#x672C;&#x4E2D;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x5BF9;&#x5E94;&#x4ED3;&#x5E93;&#x7684; Commit &#x6765;&#x81EA;&#x52A8;&#x5C06;&#x4FEE;&#x6539;&#x7684;&#x5185;&#x5BB9;&#x540C;&#x6B65;&#x5230;&#x5F00;&#x53D1;&#x9879;&#x76EE;&#x7684;&#x6E90;&#x7801;&#x4E2D;&#x3002;</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgdd1d567" class="outline-2">
+<h2 id="orgdd1d567">&#x603B;&#x7ED3;</h2>
+<div class="outline-text-2" id="text-orgdd1d567">
+<p>
+&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x7FFB;&#x8BD1;&#x7684;&#x76F8;&#x5173;&#x6587;&#x6863;&#x4E5F;&#x80FD;&#x901A;&#x8FC7;&#x8BC4;&#x5BA1;&#x6765;&#x53CA;&#x65F6;&#x53D1;&#x73B0;&#x95EE;&#x9898;&#x3002;&#x5E76;&#x4E14;&#x80FD;&#x901A;&#x8FC7;&#x76F8;&#x5173;&#x9879;&#x76EE;&#x7684; Git &#x8BB0;&#x5F55;&#x6765;&#x5BF9;&#x95EE;&#x9898;&#x8FDB;&#x884C;&#x6EAF;&#x6E90;&#xFF0C;&#x5FEB;&#x901F;&#x5730;&#x5B9A;&#x4F4D;&#x95EE;&#x9898;&#x7684;&#x539F;&#x56E0;&#x3002;
+</p>
+</div>
+</div>
+</div>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/1055130?s=460&v=4" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> 极客世界 </p>
+      <p class="subtitle"> 乐聚机器人研发总监 | 黄怀贤 </p>
+    <div>
+  </div></div></section>
+
+  <section class="share-btns">
+      <!-- <p> share it if you like it~ </p> -->
+      <!-- <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=v id=" content">
+
+<di">
+  Tweet
+</di"></a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+ -->
+  </section>
+</div>
+
+
+  
+</main>
+
+</body>
+</html>
